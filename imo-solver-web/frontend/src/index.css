@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+@layer base {
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Animation classes */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Agent status colors */
+.agent-pending {
+  @apply bg-gray-100 border-gray-300;
+}
+
+.agent-running {
+  @apply bg-blue-50 border-blue-400;
+}
+
+.agent-verifying {
+  @apply bg-yellow-50 border-yellow-400;
+}
+
+.agent-success {
+  @apply bg-green-50 border-green-400;
+}
+
+.agent-failed {
+  @apply bg-red-50 border-red-400;
+}
+
+/* Log level colors */
+.log-info {
+  @apply text-blue-600;
+}
+
+.log-warning {
+  @apply text-yellow-600;
+}
+
+.log-error {
+  @apply text-red-600;
+}
+
+.log-success {
+  @apply text-green-600;
+}
